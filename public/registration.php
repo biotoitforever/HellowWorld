@@ -27,10 +27,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = test_input($_POST["password"]);
     }
     
-    if (empty($_POST["password"])) {
-        $passwordErr = "Password is required";
+    if (empty($_POST["comment"])) {
+        $comment = "";
     } else {
-        $password = test_input($_POST["password"]);
+        $comment = test_input($_POST["comment"]);
     }
     if (!$nameErr and !$emailErr and !$passwordErr) {
         echo "<h2>Your login/registration is successful!</h2>";
@@ -65,7 +65,7 @@ p {color: red}
     Name: <input type="text" name="name" value=$name><span class="error"> * $nameErr</span><br>
   E-mail: <input type="text" name="email" value=$email><span class="error"> * $emailErr</span><br>
 Password: <input type="text" name="password" value=$password><span class="error"> * $passwordErr</span><br>
-comment: <textarea name="comment" rows="5" cols="40">$comment</textarea><br>
+ comment: <textarea name="comment" rows="5" cols="40">$comment</textarea><br>
           <input type="submit" name="submit" value="Submit" />
 </pre>
 </form>
@@ -81,4 +81,6 @@ echo "<br>";
 echo $email;
 echo "<br>";
 echo $password;
+echo "<br>";
+echo $comment;
 ?>
